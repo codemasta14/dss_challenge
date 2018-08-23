@@ -31,4 +31,4 @@ my_data <- read.delim("./data/input_data_07.txt",header = 0)%>%
 
 str_count(my_data,"[AEIOUYaeiouy]")
 # Answer:
-#  9 12  9 12  9  7  6  9  9 10 11  8 12  5 11
+#  10 14 11 16  9 10  7 10 10 10 13  9 14  7 12
