@@ -29,6 +29,6 @@
 my_data <- read.delim("./data/input_data_07.txt",header = 0)%>%
   unlist()
 
-sum(str_count(my_data,"[AEIOUaeiou]"))
+str_count(my_data,"[AEIOUaeiou]")
 # Answer:
-#139
+#  9 12  9 12  9  7  6  9  9 10 11  8 12  5 11
