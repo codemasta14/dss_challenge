@@ -15,5 +15,39 @@
 
 # Your Code Here:
 
+golden=(1+sqrt(5))/2
+other= -(1/golden)
+fibonacci <- function(n){
+  ((golden^n)-(other^n))/sqrt(5)
+}
+
+
+
+fibs <- list()
+n = 0
+while (fibonacci(n)< 4000000) {
+  fibs[n+1] <- fibonacci(n)
+  n= n+1
+  
+}
+
+fibs%>%
+  unlist()%>%
+  {data.frame(fib=.)}%>%
+  filter(fib %% 2 < 1)%>%
+  summarize(total = sum(fib))
+
+fibs%>%
+  unlist()%>%
+  {data.frame(fib=.)}%>%
+  {mutate(.,rownum= 1:n())}%>%
+  filter(rownum %% 2 <1 )%>%
+  summarize(total = sum(fib))
 
 # Answer:
+
+##Where fibonacci(n) is even
+#4613732
+
+##Where n is even
+#5702887

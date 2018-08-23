@@ -19,5 +19,28 @@
 
 # Your Code Here:
 
+my_data <- read.delim("./data/input_data_08.txt",header= F)%>%
+  apply(1,as.character)
+
+
+
+wow <- function(x){x%>%
+    str_split("")%>%
+    unlist()%>%
+    purrr::map(as.integer)%>%
+    cbind(1:length(.))%>%
+    as.data.frame()%>%
+    transmute(new=as.integer(`.`)*as.integer(V2))%>%
+    summarize(total = sum(new))}
+
+purrr::map(my_data,wow)%>%
+  unlist()
 
 # Answer:
+#Does using purrr::map count?
+
+
+#total total total total total total total total total total total total total total total total total total 
+#28   165    26    35    78     7   131   223   155     0    80   184   166   167   111    24    25   206 
+#total total total total total total total total total total total total 
+#85   139    44    19    23    13    73    17    90   128   227   149 

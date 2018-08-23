@@ -45,4 +45,17 @@
 
 # Your Code Here:
 
+my_data <- read.csv("data/input_data_12.txt")%>%
+  as.matrix()
+
+x <- my_data[,2:3]
+y <- my_data[,1]
+
+x_trans <- t(x)
+
+solve(x_trans %*% x) %*% x_trans %*% y
+
 # Answer:
+
+#X0 -1.87401599
+#X1  0.07562795

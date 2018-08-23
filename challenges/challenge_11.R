@@ -34,6 +34,27 @@
 
 
 # Your Code Here:
+my_data <- read.delim("./data/input_data_11.txt",header = 0)%>%
+  unlist()%>%
+  str_to_lower()%>%
+  str_remove_all("[:punct:]")%>%
+  str_remove_all(" ")
 
+
+
+
+palindrome <- function(string){
+  if(string==stringi::stri_reverse(string)){return(TRUE)}
+  if(string!=stringi::stri_reverse(string)){return(FALSE)}
+}
+
+
+
+my_data%>%
+  map(palindrome)%>%
+  unlist()
 
 # Answer:
+
+# [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+#[19] FALSE FALSE

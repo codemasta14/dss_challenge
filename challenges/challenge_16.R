@@ -16,4 +16,6 @@
 
 # Your Code Here:
 
+pdftools::pdf_convert("data/input_data_16.pdf")
+
 # Answer: 

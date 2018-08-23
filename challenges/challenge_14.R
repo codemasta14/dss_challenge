@@ -32,5 +32,23 @@
 # ...
 
 # Your Code Here:
+my_data <- read_csv("./data/input_data_14.txt")%>%
+  as.data.frame()
+
+my_data%>%
+  mutate(numbers=as.character(numbers),sevens = str_count(numbers,"7"))%>%
+  group_by(acct_names)%>%
+  summarize(total_sevens= sum(sevens))
 
 # Answer:
+
+### I do hereby declare that Craig is the fraudster!
+
+#acct_names total_sevens
+#<chr>             <int>
+#1 Craig               102
+#2 John                 63
+#3 Kerry                69
+#4 Mike                 62
+#5 Nyalla               69
+#6 Sarah                68

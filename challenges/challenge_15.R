@@ -15,4 +15,7 @@
 
 # Your Code Here:
 
+my_data <- rvest::html("https://pubs.niaaa.nih.gov/publications/Surveillance95/tab1_10.htm")
+
+
 # Answer:
