@@ -24,10 +24,24 @@
 
 # Your Code Here:
 
+#METHOD 1
 my_data <- read.table("./data/input_data_03.txt")%>%
   as.data.frame()
 
 rowSums(my_data)
+
+#METHOD 2
+my_data <- read_csv("./data/input_data_03.txt",col_names = F)
+
+results <- list()
+for (i in 1:length(my_data[[1]])){
+  results[i] <- str_split(my_data[i,1]," ")%>%
+    map(as.integer)%>%
+    map(sum)
+}
+
+results
+
 
 # Answer:
 

@@ -46,5 +46,12 @@
 # ...
 
 # Your Code Here:
+my_data <- read_csv('./data/input_data_17.txt')
+
+my_data%>%
+  mutate(total=n())%>%
+  group_by(superhero)%>%
+  mutate(ind_total = n())%>%
+  summarize(proportion = mean(ind_total / total))
 
 # Answer: 
