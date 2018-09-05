@@ -25,7 +25,7 @@
 # Your Code Here:
 
 #METHOD 1
-my_data <- read.table("./data/input_data_03.txt")%>%
+my_data <- read.table("./data/input_data_03.txt") %>%
   as.data.frame()
 
 rowSums(my_data)

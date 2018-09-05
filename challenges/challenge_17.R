@@ -46,12 +46,19 @@
 # ...
 
 # Your Code Here:
+
+proportion <- function(data,group){
+  groupvar <- enquo(group)
+  data%>%
+    group_by(!!groupvar)%>%
+    summarize(n =n())%>%
+    mutate(prop_n = n/ sum(n) )
+  
+}
+
 my_data <- read_csv('./data/input_data_17.txt')
 
-my_data%>%
-  mutate(total=n())%>%
-  group_by(superhero)%>%
-  mutate(ind_total = n())%>%
-  summarize(proportion = mean(ind_total / total))
 
-# Answer: 
+my_data%>%
+  proportion(superhero)
+
